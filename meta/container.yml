@@ -1,0 +1,7 @@
+logstash:
+  image: "centos:7"
+  ports:
+    - 5044:5044 
+  links:
+    - logstash
+   
