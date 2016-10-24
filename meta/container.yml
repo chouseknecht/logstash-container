@@ -3,5 +3,6 @@ logstash:
   ports:
     - 5044:5044 
   links:
-    - logstash
-   
+    - elasticsearch 
+  restart: always   
+
