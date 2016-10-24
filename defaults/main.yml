@@ -1,2 +1,5 @@
 ---
 # defaults file for logstash-container
+
+logstash_elasticsearch_hosts:
+- http://elasticsearch:9200
