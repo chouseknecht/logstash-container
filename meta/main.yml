@@ -1,6 +1,6 @@
 galaxy_info:
-  author: your name
-  description: Chris Houseknecht
+  author: Chris Houseknecht 
+  description: Adds a logstash service to your Ansible Container project. 
   company: Ansible by Red Hat 
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -33,7 +33,7 @@ galaxy_info:
   # Below are all platforms currently available in Galaxy. Uncomment any that match the base images
   # of the services defined in meta/container.yml
   #
-  #platforms:
+  platforms:
   - name: EL
     versions:
     - 7
@@ -47,4 +47,4 @@ galaxy_info:
     #       Maximum 20 tags per role.
 
 dependencies:
- - src: chouseknecht.logstash
+  - src: chouseknecht.logstash
