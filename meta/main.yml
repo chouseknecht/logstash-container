@@ -47,4 +47,4 @@ galaxy_info:
     #       Maximum 20 tags per role.
 
 dependencies:
-  - src: chouseknecht.logstash
+  - chouseknecht.logstash
