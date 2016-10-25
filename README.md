@@ -1,7 +1,7 @@
 # Role Name
 
-Adds a logstash service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
-to install the service:
+Based on [geerlingguy.logstash](https://galaxy.ansible.com/geerlingguy/logstash), adds a logstash service to your [Ansible Container](https://github.com/ansible/ansible-container) project. 
+Run the following commands to install the service:
 
 ```
 # Set the working directory to your Ansible Container project root
@@ -30,11 +30,27 @@ $ ansible-container install chouseknecht.logstash-container
 
 ## Role Variables
 
-??
+logstash_elasticsearch_hosts: http://elasticsearch:9200 
+> Specify the URL for accessing the Elasticsearch host.
+
+logstash_listen_port_beats: 5044
+> The port where the logstash service can be reached.
+
+logstash_monitor_local_syslog: false 
+logstash_local_syslog_path: /var/log/syslog
+> Use these, if you want to monitor syslog for the logstash container.
+
+logstash_ssl_dir: /etc/pki/logstash
+logstash_ssl_certificate_file: ""
+logstash_ssl_key_file: ""
+> Use to configure SSL certificates.
+
+logstash_install_plugins
+> Provide a list of plugins you want installed.
 
 ## Dependencies
 
-[chouseknecht.logstash](https://galaxy.ansible.com/chouseknecht/logstash)
+[geerlingguy.java](https://galaxy.ansible.com/geerlingguy/java)
 
 ## License
 

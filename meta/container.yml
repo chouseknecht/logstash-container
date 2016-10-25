@@ -6,6 +6,5 @@ logstash:
     - elasticsearch 
   restart: always   
   environment:
-   # Set based on verson of Java installed via role geerlingguy.java 
-   - JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.111-2.6.7.2.el7_2.x86_64
+   - JAVACMD=/usr/bin/java
 
