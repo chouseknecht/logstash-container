@@ -2,6 +2,9 @@
   file:
     path: "{{ logstash_ssl_dir }}"
     state: directory
+    owner: root
+    group: root
+    mode: 0775
   when: logstash_ssl_key_file
 
 - name: Copy SSL key and cert for logstash-forwarder.
@@ -12,5 +15,4 @@
   with_items:
     - "{{ logstash_ssl_key_file }}"
     - "{{ logstash_ssl_certificate_file }}"
-  notify: restart logstash
   when: logstash_ssl_key_file

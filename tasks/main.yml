@@ -13,6 +13,13 @@
 - name: Install Logstash.
   yum: pkg=logstash state=installed
 
+- name: Create logstash user.
+  user:
+    name: logstash
+    uid: 1000
+    createhome: no
+    group: root
+
 - include: config.yml
 - include: ssl.yml
 - include: plugins.yml
