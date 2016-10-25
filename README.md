@@ -1,5 +1,7 @@
 # Role Name
 
+[![Build Status](https://travis-ci.org/chouseknecht/logstash-container.svg?branch=master)](https://travis-ci.org/chouseknecht/logstash-container)
+
 Taken from [geerlingguy.logstash](https://galaxy.ansible.com/geerlingguy/logstash), adds a logstash service to your [Ansible Container](https://github.com/ansible/ansible-container) project. 
 Run the following commands to install the service:
 
