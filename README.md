@@ -1,6 +1,6 @@
 # Role Name
 
-Based on [geerlingguy.logstash](https://galaxy.ansible.com/geerlingguy/logstash), adds a logstash service to your [Ansible Container](https://github.com/ansible/ansible-container) project. 
+Taken from [geerlingguy.logstash](https://galaxy.ansible.com/geerlingguy/logstash), adds a logstash service to your [Ansible Container](https://github.com/ansible/ansible-container) project. 
 Run the following commands to install the service:
 
 ```

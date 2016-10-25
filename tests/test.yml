@@ -4,4 +4,16 @@
   connection: local
   tasks:
 
-  # Add tasks and assertions for testing the service here.
+  - name: Wait for the container to be running 
+    wait_for:
+      timeout: 15 
+
+  - name: Check the container status is running
+    command: "{% raw %} docker inspect --format '{{ .State.Status }}' ansible_logstash_1 {% endraw %}"
+    register: output
+
+  - name: Container should be running
+    assert:
+      that:
+        - output.stdout == 'running'
+

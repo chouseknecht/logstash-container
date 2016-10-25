@@ -9,6 +9,10 @@ before_install:
   - sudo apt-add-repository 'deb http://archive.ubuntu.com/ubuntu trusty-backports universe'
   - sudo apt-get update -qq
   - sudo apt-get install -y -o Dpkg::Options::="--force-confold" --force-yes docker-engine
+  # Install filebeat
+  - curl https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+  - echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list
+  - sudo apt-get update -qq && sudo apt-get install -y filebeat 
 
 install:
   # Install the latest Ansible Container and Ansible
@@ -26,6 +30,9 @@ script:
   - cd tests
   - ansible-container init
 
+  # Install an elasticsearch service
+  - ansible-container install chouseknecht.elasticsearch-container
+
   # Install the role into the project
   - echo "Installing and testing git+https://github.com/${TRAVIS_REPO_SLUG},${TRAVIS_COMMIT}"
   - ansible-container install git+https://github.com/${TRAVIS_REPO_SLUG},${TRAVIS_COMMIT}
@@ -39,6 +46,9 @@ script:
 
   # Run tests
   - ansible-playbook test.yml
+
+  # Stop the containers
+  - ansible-container stop -f
 
 notifications:
   email: false

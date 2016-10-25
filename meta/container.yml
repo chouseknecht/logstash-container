@@ -9,4 +9,6 @@ logstash:
   command: ["./logstash", "agent", "-f", "/etc/logstash/conf.d"]
   environment:
    - JAVACMD=/usr/bin/java
-
+  
+  # volumes:
+  #  - your_configuration_volume:/etc/logstash/conf.d
