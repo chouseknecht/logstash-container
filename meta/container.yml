@@ -5,6 +5,8 @@ logstash:
   links:
     - elasticsearch 
   restart: always   
+  working_dir: /opt/logstash/bin
+  command: ["./logstash", "agent", "-f", "/etc/logstash/conf.d"]
   environment:
    - JAVACMD=/usr/bin/java
 

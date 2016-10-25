@@ -34,7 +34,7 @@ logstash_elasticsearch_hosts: http://elasticsearch:9200
 > Specify the URL for accessing the Elasticsearch host.
 
 logstash_listen_port_beats: 5044
-> The port where the logstash service can be reached.
+> Set the filebeat port.
 
 logstash_monitor_local_syslog: false 
 logstash_local_syslog_path: /var/log/syslog
