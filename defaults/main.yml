@@ -2,4 +2,7 @@
 # defaults file for logstash-container
 
 logstash_elasticsearch_hosts:
-- http://elasticsearch:9200
+  - http://elasticsearch:9200
+
+# Set java_home based on the jdk installed via geerlingguy.java
+java_home: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.111-2.6.7.2.el7_2.x86_64
